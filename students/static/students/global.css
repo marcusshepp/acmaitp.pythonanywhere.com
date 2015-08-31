@@ -3,13 +3,15 @@ body{
   color: #ffffff;
 }
 
-h1{
-  margin-left: 20px;
+.title{
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 370%;
 }
 
 form{
   font-size: 150%;
-  width: 500px;
+  width: 600px;
   margin-top: 50px;
   margin-left: 50px;
   margin-right: auto;
@@ -20,7 +22,7 @@ form{
 
 label{
   display: inline-block;
-  width: 230px;
+  width: 370px;
 }
 
 input{
@@ -29,11 +31,12 @@ input{
 
 input[type=submit]{
   display: block;
-  margin-left: 320px;
+  margin-left: 480px;
   width: 100px;
   height: 40px;
   border: none;
   border-radius: 5px 5px 5px 5px;
   font-size: 90%;
   box-shadow: 2px 2px 1px;
+  background-color: #A1FFAD;
 }
