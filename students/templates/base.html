@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>ACM/AITP Student Org</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'students/global.css' %}">
   </head>
   <body>
+    <h1>ACM/AITP Student Org</h1>
     {% block content %}
     {% endblock %}
   </body>
