@@ -1,0 +1,42 @@
+body{
+  background: url("../images/random_grey_variations.png") repeat;
+  color: #ffffff;
+}
+
+.title{
+  margin-top: 10px;
+  margin-left: 50px;
+  font-size: 370%;
+}
+
+form{
+  font-size: 150%;
+  width: 600px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: auto;
+  background-color: #0082AD;
+  border-radius: 5px 5px 5px 5px;
+  padding: 20px 0px 20px 20px;
+}
+
+label{
+  display: inline-block;
+  width: 370px;
+}
+
+input{
+  display: inline-block;
+}
+
+input[type=submit]{
+  display: block;
+  margin-left: 480px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px 5px 5px 5px;
+  font-size: 90%;
+  box-shadow: 2px 2px 1px;
+  background-color: #A1FFAD;
+}
