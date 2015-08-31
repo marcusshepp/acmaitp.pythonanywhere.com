@@ -1,0 +1,35 @@
+from django.db import models
+
+    
+class Student(models.Model):
+    
+    ACADEMIC_STANDING_CHOICES = [
+        ("freshman", "Freshman"),
+        ("sophomore", "Sophomore"),
+        ("junior", "Junior"),
+        ("senior", "Senior"),
+        ("grad", "Graduate")
+    ]
+    METHOD_OF_DISCOVERY_CHOICES = [
+        ("poster", "A Poster"),
+        ("friend", "A friend refered me"),
+        ("email", "Got an email"),
+        ("class", "Someone came to my class"),
+        ("professor", "A professor refered me"),
+        ("stumbled", "Just happened to stumble upon")
+    ]
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    academic_standing = models.CharField(
+        max_length=50, choices=ACADEMIC_STANDING_CHOICES)
+    major = models.CharField(max_length=100)
+    programming_experience = models.PositiveSmallIntegerField()
+    laptop_bool = models.BooleanField(default=False)
+    laptop_info = models.CharField(max_length=100)
+    method_of_discovery = models.CharField(
+        max_length=50, choices=METHOD_OF_DISCOVERY_CHOICES)
+    
+    def __unicode__(self):
+        return "{0} {1}".format(self.first_name, self.last_name)
+    
