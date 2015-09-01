@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.views.generic.base import RedirectView
 
 from students import urls as student_urls
+from news import urls as news_urls
 
 urlpatterns = [
     url(r'^foo/', include(admin.site.urls)),
-    url(r'^$', RedirectView.as_view(url="signup/", permanent=False)),
-    url(r'^', include(student_urls)),
+    url(r'^signup', include(student_urls)),
+    url(r'^', include(news_urls)),
 ]

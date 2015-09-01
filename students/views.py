@@ -7,14 +7,14 @@ from .forms import StudentForm
 
 
 class CreateStudent(View):
-    
-    template_name = "create_student.html"
-    
+
+    template_name = "students/create_student.html"
+
     def get(self, request, *a, **kw):
         context = {}
         context["form"] = StudentForm()
         return render(request, self.template_name, context)
-        
+
     def post(self, request, *a, **kw):
         obj = dict(request.POST.items())
         obj.pop(u"csrfmiddlewaretoken")
