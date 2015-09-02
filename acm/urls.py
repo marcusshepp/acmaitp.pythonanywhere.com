@@ -22,6 +22,6 @@ from news import urls as news_urls
 
 urlpatterns = [
     url(r'^foo/', include(admin.site.urls)),
-    url(r'^signup', include(student_urls)),
+    url(r'^signup/', include(student_urls)),
     url(r'^', include(news_urls)),
 ]
