@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import View
 
 from .models import Student
@@ -19,4 +19,4 @@ class CreateStudent(View):
         obj = dict(request.POST.items())
         obj.pop(u"csrfmiddlewaretoken")
         Student.objects.get_or_create(**obj)
-        return HttpResponse("<h1>Object has been created.</h1>")
+        return redirect("/")

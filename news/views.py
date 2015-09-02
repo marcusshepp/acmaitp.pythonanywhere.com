@@ -1,19 +1,15 @@
-from django.contrib.syndication.views import Feed
+from django.views.generic import View
+from django.shortcuts import render
 
 from .models import Update
 
 
-class UpdateFeed(Feed):
+class UpdateFeed(View):
 
-    title = "ACM/AITP Updates"
-    description_template = 'news/updates.html'
-    link = "/"
+    template_name = 'news/updates.html'
 
-    def items(self):
-        return Update.objects.order_by("-datetime")[:3]
-
-    def item_title(self, item):
-        return "{0}: {1}".format(item.where, item.when)
-
-    def item_description(self, item):
-        return item.what
+    def get(self, request, *a, **kw):
+        context = {}
+        updates = Update.objects.all()[:5]
+        context["updates"] = updates
+        return render(request, self.template_name, context)

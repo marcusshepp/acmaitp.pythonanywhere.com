@@ -7,6 +7,7 @@ body{
   margin-top: 10px;
   margin-left: 50px;
   font-size: 370%;
+  margin-bottom: 55px;
 }
 
 form{
@@ -39,4 +40,33 @@ input[type=submit]{
   font-size: 90%;
   box-shadow: 2px 2px 1px;
   background-color: #A1FFAD;
+}
+
+.feed{
+  margin-left: 150px;
+  margin-top: 100px;
+  font-size: 150%;
+}
+
+.feed p{
+  font-size: 120%;
+}
+
+.feed ul{
+  list-style: none;
+}
+
+.feed > .entry{
+  background-color: white;
+  color: black;
+  border-radius: 5px 5px 5px 5px;
+  width: 500px;
+  padding: 10px 10px 10px 30px;
+}
+
+#signuplink{
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 200%;
+  color: white;
 }
