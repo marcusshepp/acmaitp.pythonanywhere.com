@@ -18,5 +18,7 @@ class CreateStudent(View):
     def post(self, request, *a, **kw):
         obj = dict(request.POST.items())
         obj.pop(u"csrfmiddlewaretoken")
+        if obj["programming_experience"] == u"":
+            obj["programming_experience"] = 0
         Student.objects.get_or_create(**obj)
         return redirect("/")
