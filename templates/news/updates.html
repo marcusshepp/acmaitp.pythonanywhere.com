@@ -5,10 +5,11 @@
 <div class="feed">
     <a id="signuplink" href="{% url 'signup' %}">Register for our emails!</a>
     <div class="titles">
-        <p>Offical News Feed</p>
-        <p>Weekly Problem</p>
+        <p>Official News Feed</p>
+        <p>Links/Programming Problems</p>
     </div>
     <div class="data">
+      <div class="updates">
         {% for update in updates %}
         <ul class="update_entry">
           <li>{{ update.when }}</li>
@@ -16,11 +17,14 @@
           <li>{{ update.what }}</li>
         </ul>
         {% endfor %}
+      </div>
+      <div class="problems">
+        {% for link in links %}
         <ul class="prob_entry">
-            <li><a href="#">foo</a></li>
-            <li><a href="#">bar</a></li>
+            <li><a href="{{ link.link }}">{{ link.title }}</a></li>
         </ul>
+        {% endfor %}
+      </div>
     </div>
-
 </div>
 {% endblock %}
