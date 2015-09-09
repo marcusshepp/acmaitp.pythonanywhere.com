@@ -8,6 +8,20 @@ body{
   margin-left: 50px;
   font-size: 370%;
   margin-bottom: 55px;
+  padding-left: 25px;
+  width: 45%;
+  background-color: #6399AB;
+  border-radius: 25px 10px;
+  border: 1px black solid;
+}
+
+.titles *{
+    width: 45%;
+    display: inline-block;
+    background-color: #6399AB;
+    text-align: center;
+    font-size: 150%;
+    padding: 10px 10px 10px 10px;
 }
 
 form{
@@ -42,31 +56,30 @@ input[type=submit]{
   background-color: #A1FFAD;
 }
 
-.feed{
-  margin-left: 150px;
-  margin-top: 100px;
-  font-size: 150%;
+.data{
+  /*margin-left: 60px;
+  margin-top: 100px;*/
+  font-size: 155%;
 }
 
-.feed p{
-  font-size: 120%;
-}
-
-.feed ul{
+.data ul{
   list-style: none;
-}
-
-.feed > .entry{
+  display: inline-block;
   background-color: white;
   color: black;
-  border-radius: 5px 5px 5px 5px;
-  width: 500px;
-  padding: 10px 10px 10px 30px;
+  margin-left: 35px;
+  width: 35%;
+  padding: 10px 10px 10px 55px;
+  border-radius: 10px 10px;
+  border: 5px black solid;
+}
+
+.data li{
 }
 
 #signuplink{
-  margin-top: 50px;
-  margin-left: 50px;
-  font-size: 200%;
+  margin-top: 0px;
+  margin-left: 0px;
+  font-size: 150%;
   color: white;
 }

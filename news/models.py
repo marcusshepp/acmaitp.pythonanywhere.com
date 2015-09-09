@@ -1,5 +1,7 @@
 from django.db import models
 
+from acm.settings import MEDIA_URL
+
 
 class Update(models.Model):
 
@@ -7,3 +9,8 @@ class Update(models.Model):
     when = models.DateTimeField()
     where = models.CharField(max_length=100)
     what = models.CharField(max_length=100)
+
+
+class Problem(models.Model):
+
+    url = models.FileField(upload_to=)

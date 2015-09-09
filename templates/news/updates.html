@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 <header class="title">ACM - AITP<br>CMU '15 - '16 Chapter</header>
-<a id="signuplink" href="{% url 'signup' %}">Register for our emails!</a>
+
 <div class="feed">
-  <p>Offical News Feed</p>
-  {% for update in updates %}
-  <ul class="entry">
-    <li>{{ update.when }}</li>
-    <li>{{ update.where }}</li>
-    <li>{{ update.what }}</li>
-  </ul>
-  {% endfor %}
+    <a id="signuplink" href="{% url 'signup' %}">Register for our emails!</a>
+    <div class="titles">
+        <p>Offical News Feed</p>
+        <p>Weekly Problem</p>
+    </div>
+    <div class="data">
+        {% for update in updates %}
+        <ul class="update_entry">
+          <li>{{ update.when }}</li>
+          <li>{{ update.where }}</li>
+          <li>{{ update.what }}</li>
+        </ul>
+        {% endfor %}
+        <ul class="prob_entry">
+            <li><a href="#">foo</a></li>
+            <li><a href="#">bar</a></li>
+        </ul>
+    </div>
+
 </div>
 {% endblock %}
