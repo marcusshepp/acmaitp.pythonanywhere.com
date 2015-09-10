@@ -3,11 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>ACM/AITP Student Org!</title>
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'students/css/global.css' %}">
   </head>
   <body>
     {% block content %}
+    {% endblock %}
+    {% block javascript %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
     {% endblock %}
   </body>
 </html>
