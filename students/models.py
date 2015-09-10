@@ -1,8 +1,8 @@
 from django.db import models
 
-    
+
 class Student(models.Model):
-    
+
     ACADEMIC_STANDING_CHOICES = [
         ("freshman", "Freshman"),
         ("sophomore", "Sophomore"),
@@ -29,7 +29,24 @@ class Student(models.Model):
     laptop_info = models.CharField(max_length=100)
     method_of_discovery = models.CharField(
         max_length=50, choices=METHOD_OF_DISCOVERY_CHOICES)
-    
+    officer_bool = models.NullBooleanField(blank=True, null=True)
+
     def __unicode__(self):
         return "{0} {1}".format(self.first_name, self.last_name)
-    
+
+
+class Officer(Student):
+
+    position = models.ForeignKey("Position");
+    years_involved = models.PositiveSmallIntegerField(
+        blank=True, null=True)
+
+
+class Position(models.Model):
+
+    title = models.CharField(max_length=50, blank=True, null=True)
+    responsibilities = models.CharField(
+        blank=True, null=True, max_length=50)
+
+    def __unicode__(self):
+        return "{0}".format(self.title)
