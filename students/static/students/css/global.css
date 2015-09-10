@@ -86,7 +86,12 @@ input[type=submit]{
 
 #signuplink{
   margin-top: 0px;
-  margin-left: 0px;
+  margin-left: 15px;
   font-size: 150%;
   color: white;
+}
+
+.emails{
+  text-align: center;
+  width: 75%;
 }

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="title">ACM/AITP<br>Student Emails</header>
+<p>
+  We currently have {{ num_of_students }} Student Participants!
+</p>
+<table class="emails">
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Email</th>
+  {% for student in students %}
+  <tr>
+    <td>{{ student.first_name }}</td>
+    <td>{{ student.last_name }}</td> 
+    <td>{{ student.email }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

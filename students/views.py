@@ -22,3 +22,16 @@ class CreateStudent(View):
             obj["programming_experience"] = 0
         Student.objects.get_or_create(**obj)
         return redirect("/")
+
+
+class StudentEmails(View):
+    
+    template_name = "students/student_emails.html"
+
+    def get(self, request, *a, **kw):
+        context = {}
+        students = Student.objects.all()
+        num_of_students = Student.objects.all().count()
+        context["students"] = students
+        context["num_of_students"] = num_of_students
+        return render(request, self.template_name, context)
