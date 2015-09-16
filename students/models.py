@@ -32,7 +32,7 @@ class Student(models.Model):
     officer_bool = models.NullBooleanField(blank=True, null=True)
 
     def __unicode__(self):
-        return "{0} {1}".format(self.first_name, self.last_name)
+        return self.first_name
 
 
 class Officer(Student):

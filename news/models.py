@@ -5,6 +5,9 @@ from acm.settings import MEDIA_URL
 
 class Update(models.Model):
 
+    class Meta:
+        ordering = ['-pk']
+
     datetime = models.DateTimeField(auto_now_add=True)
     when = models.DateTimeField()
     where = models.CharField(max_length=100)
@@ -15,6 +18,9 @@ class Update(models.Model):
 
 
 class Link(models.Model):
+
+    class Meta:
+        ordering = ['-pk']
 
     title = models.CharField(max_length=200)
     problem = models.FileField(upload_to=MEDIA_URL, blank=True, null=True)
