@@ -24,7 +24,7 @@ body{
     padding: 10px 10px 10px 10px;
 }
 
-form{
+.signup{
   font-size: 150%;
   width: 600px;
   margin-top: 50px;
@@ -44,7 +44,7 @@ input{
   display: inline-block;
 }
 
-input[type=submit]{
+.signup-btn{
   display: block;
   margin-left: 480px;
   width: 100px;

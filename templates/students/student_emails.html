@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="title">ACM/AITP<br>Student Emails</header>
+<a href="/"><header class="title">ACM/AITP<br>Student Emails</header></a>
 <p>
   We currently have {{ num_of_students }} Student Participants!
 </p>
+<form action="" method="POST">{% csrf_token %}<input type="submit" value="Download Emails"></form>
 <table class="emails" id="table">
     <thead>
         <tr>

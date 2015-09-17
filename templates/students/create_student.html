@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="title">Signup for ACM/AITP</header>
-<form class="" action="" method="POST">
-  {% csrf_token %}  
+<a href="/"><header class="title">Signup for ACM/AITP</header></a>
+<form class="signup" action="" method="POST">
+  {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Submit">
+  <input class="signup-btn" type="submit" value="Submit">
 </form>
 {% endblock %}
