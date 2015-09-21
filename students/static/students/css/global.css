@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
 body{
   background: url("../images/random_grey_variations.png") repeat;
   color: #ffffff;
@@ -15,13 +20,13 @@ body{
   border: 1px black solid;
 }
 
-.titles *{
-    width: 45%;
-    display: inline-block;
+.child_title{
     background-color: #6399AB;
     text-align: center;
     font-size: 150%;
     padding: 10px 10px 10px 10px;
+    width: 100%;
+    margin-bottom: 25px;
 }
 
 .signup{
@@ -33,6 +38,11 @@ body{
   background-color: #0082AD;
   border-radius: 5px 5px 5px 5px;
   padding: 20px 0px 20px 20px;
+}
+
+.register_links{
+  font-size: 150%;
+  margin-bottom: 25px;
 }
 
 label{
@@ -56,38 +66,43 @@ input{
   background-color: #A1FFAD;
 }
 
-.data{
-  font-size: 155%;
-}
 
-.data ul{
-  list-style: none;
-  display: inline-block;
-  background-color: white;
-  color: black;
-  margin-left: 35px;
-  width: 35%;
-  padding: 10px 10px 10px 55px;
-  border-radius: 10px 10px;
-  border: 5px black solid;
+.content{
+  vertical-align: top;
+  max-height: 400px;
 }
-
 
 .updates{
-  width: 55%;
   display: inline-block;
+  /*height: 400px;*/
+  width: 49%;
+}
+
+.update_entry{
+  list-style: none;
+  margin-top: 9px;
+  background-color: #4790A6;
+  font-size: 200%;
+  color: #C4C4C4;
+  border-radius: 5px 10px;
+}
+
+.update_entry:hover{
+  background-color: #75DDFF;
+  color: black;
 }
 
 .problems{
   display: inline-block;
-  width: 45%;
+  /*height: 400px;*/
+  width: 49%;
   float: right;
+  margin-right: 10px;
 }
 
 #signuplink{
   margin-top: 0px;
   margin-left: 15px;
-  font-size: 150%;
   color: white;
 }
 
@@ -95,4 +110,19 @@ input{
   text-align: center;
   width: 75%;
   color: black;
+}
+
+.linkable:hover > p{
+  background-color: #75DDFF;
+}
+
+.linkable p{
+  text-align: center;
+  background-color: #4790A6;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 71px;
+  font-size: 150%;
+  line-height: 280%;
+  border-radius: 5px 10px;
 }
