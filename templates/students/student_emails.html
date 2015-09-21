@@ -28,7 +28,9 @@
 {{ block.super }}
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#table").DataTable();
+        $("#table").DataTable({
+          paging: false
+        });
     });
 </script>
 {% endblock %}
