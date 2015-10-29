@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<a href="/"><header class="title">ACM/AITP<br>Student Emails</header></a>
-<p>
-  We currently have {{ num_of_students }} Student Participants!
-</p>
-<form action="" method="POST">{% csrf_token %}<input type="submit" value="Download Emails"></form>
-<table class="emails" id="table">
+<form class="margin10" action="" method="POST">
+	{% csrf_token %}<input type="submit" class="button bg-hover-blue fg-hiver-white" value="Download Emails">
+</form>
+<div class="notify bg-darkMagenta fg-white" style="max-width: 100%; margin-top: 20px">
+    <span class="notify-text">We currently have {{ num_of_students }} Student Participants!</span>
+</div>
+<table class="table striped hovered cell-hovered border bordered" id="table">
     <thead>
         <tr>
             <th>First Name</th>

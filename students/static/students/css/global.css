@@ -1,3 +1,69 @@
+/**
+	Rowland's changes
+
+**/
+.acm-navbar {
+	background: #000;
+	width: 100%;
+}
+
+div.banner {
+	height: 400px;
+	width: 100%;
+	margin-top: 0px;
+	background: url("../images/hall_pearce.png") no-repeat center center;
+	-webkit-background-size: contain;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    opacity: 1;
+}
+
+a:HOVER{
+	text-decoration: none;
+}
+
+form.form label{
+	display: block;
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+
+form.form p {
+	display: block;
+    height: 2.125rem;
+    line-height: 1;
+    margin: 0.325rem 0;
+    min-height: 2.125rem;
+    position: relative;
+    vertical-align: middle;
+}
+
+form.form input, form.form select{
+	border: 1px solid #d9d9d9;
+    height: 100%;
+    padding: 0.3125rem;
+    position: relative;
+    width: 40%;
+    z-index: 0;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+form.form input[type="submit"]{
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+form.form input[type="checkbox"]{
+   height: 0.0625rem;
+    width: 0.0625rem;
+}
+
+
+
+/** End Rowland's changes
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -8,7 +74,7 @@ body{
   color: #ffffff;
 }
 
-.title{
+x.title{
   margin-top: 10px;
   margin-left: 50px;
   font-size: 370%;
@@ -74,7 +140,7 @@ input{
 
 .updates{
   display: inline-block;
-  /*height: 400px;*/
+  /*height: 400px;
   width: 49%;
 }
 
@@ -94,7 +160,7 @@ input{
 
 .problems{
   display: inline-block;
-  /*height: 400px;*/
+  /*height: 400px;
   width: 49%;
   float: right;
   margin-right: 10px;
@@ -125,4 +191,4 @@ input{
   font-size: 150%;
   line-height: 280%;
   border-radius: 5px 10px;
-}
+}**/

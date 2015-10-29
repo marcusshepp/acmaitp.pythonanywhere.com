@@ -1,32 +1,44 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="title">ACM - AITP<br>CMU '15 - '16 Chapter</header>
+<div class="grid">
+	<div class="row cells12">
+		<div class="cell colspan8">
+			<div class="panel">
+		    	<div class="heading bg-darkMagenta">
+		    		<span class="icon mif-feed3 bg-yellow"></span>
+		    		<span class="title">Official News Feed</span>
+		    	</div>
+			      <div class="content">
+			        <div class="listview-outlook" data-role="listview">
+			        	{% for update in updates %}
+				            <div class="list">
+				            	<div class="list-content">
+					            	<span class="list-title">When: {{ update.when }}</span>
+						            <span class="list-subtitle">Where: {{ update.where }}</span>
+						            <span class="list-remark">What: {{ update.what }}</span>
+					            </div>
+				            </div>
+			          	{% endfor %}
+			        </div>
+			      </div>
+			  </div>
+		</div>
+		<div class="cell colspan4">
+			<div class="panel">
+	      		<div class="heading bg-darkMagenta">
+	      			<span class="icon mif-file-code bg-yellow"></span>
+		    		<span class="title">Links/Programming Problems</span>
+		    	</div>
+		    	<div class="content">
+		    		{% for link in links %}
+			          <a href="{{ link.link }}" class="linkable">
+			            <p>{{ link.title }}</p>
+			          </a>
+			        {% endfor %}
+		    	</div>
 
-<div class="feed">
-    <div class="register_links">
-      <a id="signuplink" href="{% url 'signup' %}">Register for our emails!</a>
-      <a id="signuplink" href="{% url 'emails' %}">Registered Students</a>  
-    </div>
-    
-    <div class="content">
-      <div class="updates">
-        <p class="child_title">Official News Feed</p>
-          {% for update in updates %}
-          <ul class="update_entry">
-            <li>When: {{ update.when }}</li>
-            <li>Where: {{ update.where }}</li>
-            <li>What: {{ update.what }}</li>
-          </ul>
-          {% endfor %}
-      </div>
-      <div class="problems">
-        <p class="child_title">Links/Programming Problems</p>
-          {% for link in links %}
-          <a href="{{ link.link }}" class="linkable">
-            <p>{{ link.title }}</p>
-          </a>
-          {% endfor %}
-      </div>
-    </div>
+	      </div>
+		</div>
+	</div>
 </div>
 {% endblock %}
