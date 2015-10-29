@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<a href="/"><header class="title">Signup for ACM/AITP</header></a>
-<form class="signup" action="" method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input class="signup-btn" type="submit" value="Submit">
-</form>
+<div class="margin10"></div>
+<div class="panel">
+   	<div class="heading bg-darkMagenta">
+   		<span class="icon mif-user-plus bg-yellow"></span>
+   		<span class="title">Sign up</span>
+   	</div>
+   	<div class="content">
+		<form class="form" action="" method="POST">
+		  {% csrf_token %}
+		  {{ form.as_p }}
+		  <input class="button success margin40" type="submit" value="Submit">
+		</form>
+	</div>
+</div>
 {% endblock %}

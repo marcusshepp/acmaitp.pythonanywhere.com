@@ -4,15 +4,65 @@
     <meta charset="utf-8">
     <title>ACM/AITP Student Org!</title>
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../students/static/students/css/metro.min.css">
+	<link rel="stylesheet" href="../students/static/students/css/metro-schemes.css">
+	<link rel="stylesheet" href="../students/static/students/css/metro-icons.min.css">
+	<script src="../students/static/students/js/jquery-2.1.4.min.js"></script>
+	<script src="../students/static/students/js/metro.min.js"></script>
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'students/css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/metro.min.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/metro-schemes.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/metro-icons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'students/css/metro-responsive.min.css' %}">
+	<script src="{% static 'students/js/jquery-2.1.4.min.js' %}"></script>
+	<script src="{% static 'students/js/metro.min.js' %}"></script>
   </head>
   <body>
-    {% block content %}
-    {% endblock %}
-    {% block javascript %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-    {% endblock %}
+  	<header>
+  		<div class="app-bar bg-darkMagenta">
+  			<div class="container">
+  				<a class="app-bar-element branding bg-hover-darkCrimson" href="/">CMU ACM/ITP Student Org.</a>
+				<ul class="app-bar-menu place-right">
+					<li><a href="{% url 'signup' %}" class="bg-hover-darkCrimson">
+						<span data-role="hint"
+    							data-hint-background="bg-yellow"
+    							data-hint-color="fg-black"
+    							data-hint-mode="2"
+    							data-hint="Email Subscriptions|Subscribe to receive important emails and notifications"
+
+								class="mif-2x mif-mail-read fg-yellow"></span>
+						</a>
+					</li>
+		        	<li>
+		        		<a href="{% url 'emails' %}" class="bg-hover-darkCrimson">
+		        		<span data-role="hint"
+    							data-hint-background="bg-yellow"
+    							data-hint-color="fg-black"
+    							data-hint-mode="2"
+    							data-hint="Our Members|View and download the list of registered members"
+
+								class="mif-2x mif-user-check fg-yellow"></span>
+						</a>
+						</li>
+				</ul>
+  			</div>
+	  	</div>
+  	</header>
+	<section class="no-margin">
+		<div class="banner">
+			<div class="align-center">
+
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		{% block content %}
+	    {% endblock %}
+	    {% block javascript %}
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script type="text/javascript" src="http://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+	    {% endblock %}
+	</div>
   </body>
 </html>
