@@ -1,10 +1,11 @@
 from django import forms
+from django.forms.extras.widgets import SelectDateWidget
 
-from .models import Student
+from .models import Student, TechTalk
 
 
 class StudentForm(forms.ModelForm):
-        
+
     class Meta:
         model = Student
         fields = [
@@ -27,4 +28,19 @@ class StudentForm(forms.ModelForm):
         }
         widgets = {
 			"email": forms.EmailInput(),
+		}
+
+class TechTalkForm(forms.ModelForm):
+
+    class Meta:
+        model = TechTalk
+        fields = [
+            "full_name",
+            "title_of_talk",
+            "when",
+            "email"
+        ]
+        widgets = {
+			"email": forms.EmailInput(),
+            "when": SelectDateWidget(),
 		}

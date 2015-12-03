@@ -1,20 +1,21 @@
-import csv
+import csv, datetime
 
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import View
 
-from .models import Student
-from .forms import StudentForm
+from .models import Student, TechTalk
+from .forms import StudentForm, TechTalkForm
 
 
 class CreateStudent(View):
 
-    template_name = "students/create_student.html"
+    template_name = "students/form.html"
 
     def get(self, request, *a, **kw):
         context = {}
         context["form"] = StudentForm()
+        context["form_name"] = "Email Updates"
         return render(request, self.template_name, context)
 
     def post(self, request, *a, **kw):
@@ -24,6 +25,36 @@ class CreateStudent(View):
             obj["programming_experience"] = 0
         Student.objects.get_or_create(**obj)
         return redirect("/")
+
+
+class CreateTeckTalk(View):
+
+    template_name = "students/form.html"
+
+    def get(self, request, *a, **kw):
+        context = {}
+        context["form"] = TechTalkForm()
+        context["form_name"] = "2016 TechTalk"
+        return render(request, self.template_name, context)
+
+    def post(self, request, *a, **kw):
+        day = request.POST["when_day"]
+        if len(day) < 2:
+            day = "0" + day
+        month = request.POST["when_month"]
+        if len(month) < 2:
+            month =  "0" + month
+        year = request.POST["when_year"]
+        date = month + "/" + day + "/" + year
+        date = datetime.datetime.strptime(str(date), "%m/%d/%Y")
+        data = {
+            "full_name": str(request.POST["full_name"]),
+            "title_of_talk": str(request.POST["title_of_talk"]),
+            "when": date.date(),
+            "email": str(request.POST["email"]),
+        }
+        TechTalk.objects.create(**data)
+        return render(request, "students/thanks.html")
 
 
 class StudentEmails(View):
