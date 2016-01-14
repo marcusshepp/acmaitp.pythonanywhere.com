@@ -50,3 +50,14 @@ class Position(models.Model):
 
     def __unicode__(self):
         return "{0}".format(self.title)
+
+
+class TechTalk(models.Model):
+
+    full_name = models.CharField(max_length=100)
+    title_of_talk = models.CharField(max_length=100)
+    when = models.DateTimeField()
+    email = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return "{} - {}".format(self.full_name, self.title_of_talk)
